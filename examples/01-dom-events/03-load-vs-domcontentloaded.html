@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>JS DOM Events</title>
+  <meta name="description" content="Basic Responsive Design">
+  <meta name="author" content="Elias Carlston">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <script src="03-load-vs-domcontentloaded.js"></script>
+
+</head>
+
+<body>
+  <h1>JS DOM Events</h1>
+  <main>
+    <p>
+      Difference between 'load' and 'domcontentloaded' events:
+      In Google Chrome, 
+    </p>
+    <ol>
+      <li>
+        Navigate to chrome://settings/clearBrowserData and clear images
+        ...or...
+        Open a new incognito tab
+      </li>
+      <li>
+        Go to Dev Tools > Network > Throttling and choose something under 5Mb/s
+      </li>
+      <li>
+        Reload the page. Alert should take several seconds to fire
+      </li>
+    </ol>
+    <ul>
+      <li>
+        <img src="http://www.trbimg.com/img-58cdc02a/turbine/la-et-chuck-berry-life-in-pictures-20160119-014">
+      </li>
+      <li>
+        <img src="http://images.huffingtonpost.com/2012-06-19-ASPTheRamonesCourtesyofIanDickson.jpg">
+      </li>
+      <li>
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/ca/1a/30/ca1a30ede4425fa69b5e54bfc3462043.jpg">
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
