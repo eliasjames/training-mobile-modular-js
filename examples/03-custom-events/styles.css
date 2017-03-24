@@ -1,4 +1,4 @@
-.click-target, main ul li {
+.multi-select, main ul li {
   border: 2px solid darkgray;
   padding: 1em;
   width: 32%;
@@ -15,7 +15,7 @@ main ul li {
   margin-right: 7%;
   width: initial;
 }
-ul.click-target {
+ul.multi-select {
   min-height: 3em;
   width: 66%;
 }
