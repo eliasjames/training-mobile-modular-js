@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 
+  <script src="01-no-body.js"></script>
   <script>
     console.log( 'Move 01-no-body after body to solve error' );
   </script>
@@ -25,10 +26,9 @@
   <h1>JS DOM Events</h1>
   <main>
     <p>
-      First, let's look at the 'load' event. 
+      First, let's look at the 'load' event. Open the javascript console in your browser's dev tools.
     </p>
   </main>
 </body>
-<!-- script refers body element, so muct come after body in HTML -->
-<script src="02-document-versus-window.js"></script>
+<!-- script refers to body element, so must be called after body in HTML -->
 </html>
