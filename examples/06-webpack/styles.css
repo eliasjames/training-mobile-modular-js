@@ -1,0 +1,21 @@
+.multi-select, main ul li {
+  border: 2px solid darkgray;
+  padding: 1em;
+  width: 32%;
+}
+li.selected {
+  background-color: darkred;
+}
+main ul {
+  width: 50%;
+}
+main ul li {
+  float: left;
+  list-style-type: none;
+  margin-right: 7%;
+  width: initial;
+}
+ul.multi-select {
+  min-height: 3em;
+  width: 66%;
+}
