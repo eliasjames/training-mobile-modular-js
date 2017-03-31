@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Custom Events</title>
+  <meta name="description" content="Basic Responsive Design">
+  <meta name="author" content="Elias Carlston">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <script src="03-cors.js"></script>
+
+</head>
+
+<body onload="onBodyLoad()">
+  <h1>AJAX</h1>
+  <main>
+    <p>
+      Start the web server:
+    </p>
+    <ol>
+      <li>Open CLI</li>
+      <li>'cd 07-ajax-cors-jsonp'</li>
+      <li>'node 02-server.js'</li>
+    </ol>
+    <p>
+      Error in the console should read:<br/>
+      XMLHttpRequest cannot load http://localhost:3000/respond-to-ajax. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access.<br/>
+    </p>
+  </main>
+</body>
+</html>
