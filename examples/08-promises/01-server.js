@@ -8,11 +8,11 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function (req, res) {
-    res.send('Hello World!')
+    res.send( 'Home page' );
 });
 app.get('/respond-to-ajax', function (req, res) {
     res.json( { message: 'Hello World!' });
 });
 app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
+    console.log('Example app listening on port 3000!');
 });
