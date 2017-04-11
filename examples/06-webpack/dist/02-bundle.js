@@ -17172,7 +17172,7 @@ function component () {
     var element = document.createElement( 'div' );
 
     /* lodash is required for the next line to work */
-    element.innerHTML = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join( [ 'Hello','webpack' ], ' ' );
+    element.innerHTML = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join( [ 'Ready', 'for', 'webpack' ], ' ' );
 
     return element;
 }
