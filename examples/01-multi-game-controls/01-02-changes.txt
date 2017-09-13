@@ -1,0 +1,26 @@
+Goal: Create & play multiple TicTacToe games simultaneously
+Reason: Common request, demonstrates modularity
+Method: Move all functionality underneath global object
+Notes: This is another intermediate step on the way to multiple games. 
+Games will not fully work until the 03 step.
+The boards will appear separate, but will share memory. 
+
+02-multi-game-ui-oop.html
+- add script tag for 02-init.js
+02-bind.js
+- Move initGame function to 02-init.js
+- Make all functions into methods on an object
+- Make that object the return value of a function
+- Assign that function to 'bind' property on global ticTacToe object
+02-tictactoe.js
+- Make all functions into methods on an object
+- Make that object the return value of a function
+- Assign that function to 'game' property on global ticTacToe object
+02-init.js
+- Create global ticTacToe object
+- Create 'binds' and 'games' properties & assign blank objects as placeholders
+- Move initGame function from 02-bind.js to an object property
+-- Change name to newGame
+-- Create a game ID dynamically based on Date
+-- Call game and bind functions 
+-- Store result in placeholder objects using game ID as property name

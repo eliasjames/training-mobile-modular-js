@@ -1,0 +1,14 @@
+Goal: Create game board dynamically
+Reason: First step towards playing multiple games
+Method: Move board markup creation from .html file to JavaScript
+
+- 01-refactor.html
+-- add element with an ID to serve as board location
+- 01-bind.js > buildGameUI
+-- create a function to build game board dynamically
+-- loop through rows, columns, and players
+-- create jQuery tr & td
+-- create label & input with dynamic name & value
+-- append label & input to td, td to tr, tr to table
+-- write UI to location specified by ID
+

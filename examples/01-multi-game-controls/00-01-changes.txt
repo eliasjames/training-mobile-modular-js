@@ -1,0 +1,22 @@
+Goal: Create & play multiple TicTacToe games simultaneously
+Reason: Common request, demonstrates modularity
+Method: Refactor methods from specific to general
+Notes: After this step, the button click will create multiple game boards. 
+However, they will not fully work until the 03 step.
+The boards will appear separate, but will share memory. 
+
+01-multi-game-controls.html
+- Move button HTML into this file
+- Directly under UI top level 
+- This avoids the button getting overwritten by dynamic games
+01-bind.js
+- Create top-level game element & add appropriate classes
+- Append fields to display game ID & current player in div
+- Append table to div
+- Append div to DOM
+01-config.js
+- Create a counter function using a closure
+- Return the value of the counter as game ID
+01-controls.js
+- Change handler function on button to call initGame()
+

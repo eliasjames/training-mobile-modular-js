@@ -1,0 +1,37 @@
+Goal: Remove dependence on global object
+Reason: Avoid pollution, protect data, encapsulation
+Method: Wrap constructor functions in IIFEs, communicate via events
+
+01-bind.js
+- Wrap entire constructor function with an IIFE
+- Add event listener inside IIFE
+-- Listen for 'bindGameUiToEngine' event
+-- Call constructor function
+- Add event dispatch at end of constructor function
+-- name 'bindReady'
+-- payload of constructed bind object
+01-tictactoe.js
+- Wrap entire constructor function with an IIFE
+- Add event listener inside IIFE
+-- Listen for 'makeGameEngine' event
+-- Call constructor function
+-- Pass top-level object from detail
+- Add event dispatch at end of constructor function
+-- name 'gameReady'
+-- payload of constructed game object
+01-init.js
+- Wrap entire constructor function with an IIFE
+- Add init method
+-- Add event listener 'gameReady'
+--- Assign event payload to top-level object as game constructor
+--- Dispatch 'bindGameUiToEngine' event
+-- Add event listener 'bindReady'
+--- Assign event payload to top-level object as bind constructor
+-- Dispatch 'makeGameEngine' event
+-- Add event listener 'startNewGame' - call newGame
+- Add event dispatch 'startNewGame' to document ready
+01-controls
+- In button click handler
+-- Remove direct call to newGame function 
+-- Add event dispatch 'startNewGame'
+

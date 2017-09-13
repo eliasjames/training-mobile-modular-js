@@ -1,0 +1,10 @@
+.tictactoe-board {
+  margin: 0.5em 0 1em 0;
+}
+.tictactoe-board td {
+  border: 1px solid black;
+  margin-bottom: 2em;
+}
+#board-location button {
+  border: 1px solid black;
+}

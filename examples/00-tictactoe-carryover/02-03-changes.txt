@@ -1,0 +1,16 @@
+Goal: Add button 
+Reason: Click will add multiple games in next step
+Method: Create new controls file
+
+03-button-ready.html
+- add script tag for 03-controls
+03-config.js
+- add new ui > els identifier 'new-game'
+03-controls
+- create file
+- inside document ready
+-- create a button element
+-- append to boardLocation element
+-- set id attribute to new game identifier from config
+-- register a click handler on button element 
+-- click handler can just console log for now

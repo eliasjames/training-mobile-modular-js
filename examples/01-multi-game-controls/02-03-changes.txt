@@ -1,0 +1,21 @@
+Goal: Create & play multiple TicTacToe games simultaneously
+Reason: Common request, demonstrates modularity
+Method: Create & hold multiple games to correspond to multiple boards
+Notes: Multiple games will fully work after this step.
+
+03-init.js
+- pass game ID when calling bind and game constructors
+03-bind.js
+- Accept gameId as a constructor parameter
+-- Add as a function argument to the top-level function
+-- Assign the value as a property on the return object
+- In buildGameUI, add data-game-id attributes to:
+-- game inputs
+-- current player display
+- Add data-game-id attribute to selector for input click event
+- In change player event handler, check game ID in event payload
+03-tictactoe.js
+- Accept gameId as a constructor parameter
+-- Add as a function argument to the top-level function
+-- Assign the value as a property on the return object
+- Add game ID to change player event payload

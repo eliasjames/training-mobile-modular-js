@@ -1,0 +1,21 @@
+Goal: Standardize app-level settings
+Reason: Settings shouldn't be stored in code
+Method: Create settings object & move values there
+
+Changes:
+02-use-config.html
+- add script tag linking to 02-config.js
+02-bind.js
+- locate string identifiers 
+- replace with references to GLOBAL_CONFIG object
+- string identifiers include custom event names and DOM selectors, but not native DOM references 
+- (think: values specific to your program)
+02-config.js
+- create file
+- file creates one object, GLOBAL_CONFIG
+- move string identifiers to object properties
+- move game settings to object properties
+02-tictactoe.js
+- remove variables used for string identifiers and app state
+- ex: movePromptObj, cliMode, objects within getCurrentPlayer
+- replace with references to GLOBAL_CONFIG object
