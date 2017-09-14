@@ -1,0 +1,16 @@
+Goal: Move from RequireJS to Webpack
+Reason: Different tools
+Method: Convert small differences in format
+
+01-amd-webpack.html
+- Change script tag to  src="dist/bundle.js", remove data-main
+01-bind.js, 01-controls.js, 01-tictactoe.js
+- Change '01-config' to './01-config'
+- add 'jQuery'
+01-init.js
+- Change requirejs to require
+- Add require call for jQuery before document.ready
+webpack.config.js
+- Add this file
+- Note for example purposes, this file points at 01-webpack.config.js
+

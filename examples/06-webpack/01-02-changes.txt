@@ -1,0 +1,15 @@
+Goal: Move from AMD format to CommonJS
+Reason: Different tools
+Method: Convert small differences in format
+
+02-bind.js, 02-config.js, 02-controls.js, 02-tictactoe.js
+- Remove define() function call
+- Assign constructor funciton to module.exports
+02-bind.js, 02-controls.js, 02-tictactoe.js
+- Add require() calls for global config and jQuery
+02-init.js
+- Add require() call for controls
+- Capture return value in local variable
+- Execute the function captured
+02-webpack.config.js
+- Add entries to support sourcemaps

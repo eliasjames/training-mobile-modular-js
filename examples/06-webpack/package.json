@@ -1,16 +1,27 @@
 {
-  "name": "examples",
+  "name": "03-commonjs-webpack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "00-bind.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cleanForBuild": "rimraf dist/*",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "webpack": "rimraf dist/* && webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "rimraf": "^2.6.1",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.1"
+  },
   "dependencies": {
-    "lodash": "^4.17.4",
-    "webpack": "^2.3.2"
+    "jquery": "^3.2.1"
   }
 }
