@@ -1,12 +1,11 @@
 function multiSelect( customEvents ) { 
-  // TODO: iterate through all click-target instead of taking first one directly
   var allMultiSelects = document.getElementsByClassName( 'multi-select' );
 
   for ( var i=0; i<allMultiSelects.length; i++ ) {
     init( allMultiSelects[i] );
   }
 
-
+  // helper function for iterating
   function iterateChoiceSiblings( iterator, siblings ) {
     for ( let i=0; i < siblings.length; i++ ) {
       iterator( i );
@@ -48,13 +47,13 @@ function multiSelect( customEvents ) {
     }
   }
 
+  window.addEventListener( 'click', onClickOutsideTarget );
+
   function onClickOutsideTarget( evt ) {
     console.log( 'window', evt );
     var hitSomeTarget = false;
 
     function outsideIterator( i ) {
-      // TODO: ignore clicks on other multi-selects
-      // evt.target.srcElement.parentElement.classList.contains( 'multi-select' )
       hitSomeTarget = hitSomeTarget ? hitSomeTarget : (
         evt.target === outsideSiblings[i]
       );
@@ -76,5 +75,4 @@ function multiSelect( customEvents ) {
       }
     }
   }
-  window.addEventListener( 'click', onClickOutsideTarget ); 
 }
