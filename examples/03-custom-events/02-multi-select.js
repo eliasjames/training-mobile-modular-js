@@ -6,6 +6,13 @@ function multiSelect( customEvents ) {
     init( allMultiSelects[i] );
   }
 
+
+  function iterateChoiceSiblings( iterator, siblings ) {
+    for ( let i=0; i < siblings.length; i++ ) {
+      iterator( i );
+    }
+  }
+
   function init( parentMS ) {
     var choiceSiblings = parentMS.children;
     parentMS.addEventListener( 'click', function ( evt ){
@@ -18,36 +25,11 @@ function multiSelect( customEvents ) {
     for ( var i=0; i<choiceSiblings.length; i++ ) {
       choiceSiblings[i].addEventListener( 'click', onTargetClick );
     }
-    window.addEventListener( 'click', onClickOutsideTarget ); 
-
-    function iterateChoiceSiblings( iterator ) {
-      for ( i=0; i<choiceSiblings.length; i++ ) {
-        iterator( i );
-      }
-    }
 
     function onClearSelections() {
       iterateChoiceSiblings( function( i ) {
         removeSelected( choiceSiblings[i] );
-      });
-    }
-
-    function onClickOutsideTarget( evt ) {
-      console.log( 'window', evt );
-      var hitSomeTarget = false;
-
-      function outsideIterator( i ) {
-        // TODO: ignore clicks on other multi-selects
-        // evt.target.srcElement.parentElement.classList.contains( 'multi-select' )
-        hitSomeTarget = hitSomeTarget ? hitSomeTarget : (
-          evt.target === choiceSiblings[i]
-        );
-      }
-      iterateChoiceSiblings( outsideIterator );
-
-      if ( !hitSomeTarget ) {
-        parentMS.dispatchEvent( customEvents.clearSelections );
-      }
+      }, choiceSiblings );
     }
 
     function onTargetClick() {
@@ -65,4 +47,34 @@ function multiSelect( customEvents ) {
       el.className = '';
     }
   }
+
+  function onClickOutsideTarget( evt ) {
+    console.log( 'window', evt );
+    var hitSomeTarget = false;
+
+    function outsideIterator( i ) {
+      // TODO: ignore clicks on other multi-selects
+      // evt.target.srcElement.parentElement.classList.contains( 'multi-select' )
+      hitSomeTarget = hitSomeTarget ? hitSomeTarget : (
+        evt.target === outsideSiblings[i]
+      );
+    }
+    var outsideSiblings = []; 
+    for ( var i=0; i<allMultiSelects.length; i++ ) {
+      outsideSiblings.push( allMultiSelects[i] );
+    }
+    iterateChoiceSiblings( outsideIterator, outsideSiblings );
+
+    if ( !hitSomeTarget ) {
+      if ( evt.target.className !== 'multi-select' 
+        && evt.target.parentElement.className !== 'multi-select' 
+      ) {
+        function iterateClearSelections( i ) {
+          allMultiSelects[i].dispatchEvent( customEvents.clearSelections );
+        }
+        iterateChoiceSiblings( iterateClearSelections, allMultiSelects ); 
+      }
+    }
+  }
+  window.addEventListener( 'click', onClickOutsideTarget ); 
 }
