@@ -1,3 +1,3 @@
-requirejs( [ '01-requirejs' ], function( playlist ) {
+requirejs( [ '01-multi-select-require' ], function( playlist ) {
   playlist.init();
 });
