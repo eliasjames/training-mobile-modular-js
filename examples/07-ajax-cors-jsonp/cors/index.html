@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Basic CSS</title>
+  <meta name="description" content="Basic CSS">
+  <meta name="author" content="Elias Carlston">
+
+  <link rel="stylesheet" href="styles.css?v=1.0">
+
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>Hapi</h1>
+  <button id="do-ajax">Do Ajax</button>
+  <script>
+    $( document ).ready( function() {
+      $( '#do-ajax' ).on( 'click', function() {
+        $.ajax( 'http://localhost:9999/player/1', {
+          success: function( data ) {
+            console.log( 'success', data );
+          },
+          
+          failure: function( data ) {
+            console.log( 'failure', data );
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
