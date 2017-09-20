@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Your page</title>
+    <meta name="description" content="Forms">
+    <meta name="author" content="Elias Carlston">
+    <style>
+      form * {
+        display: block;
+      }
+      input:invalid {
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      document.addEventListener( 'DOMContentLoaded', function() {
+        document.getElementById( 'second-email' )
+          .addEventListener( 'blur', function( event ) {
+            if ( event.target.value !== document.getElementById( 'first-email' ).value ) {
+              event.target.setCustomValidity( 'The two email addresses must match.' );
+            } else {
+              event.target.setCustomValidity( '' );
+            }
+          });
+      });
+    </script>
+  </head>
+	<body>
+		<h1>Forms</h1>
+    <form>
+      <label for="inpEmail">Email address</label>
+      <input 
+        id="first-email" 
+        autofocus
+        type="email" 
+        required 
+        placeholder="you have an email, right?"
+      >
+      <label for="inpEmail">Enter email again</label>
+      <input type="email" required id="second-email">
+      <input type="submit">
+    </form>
+	</body>
+</html>
