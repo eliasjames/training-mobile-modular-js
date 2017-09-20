@@ -39,7 +39,7 @@ module.exports = (function() {
     });
   });
   app.get( '/', ( req, res )=>{
-    res.redirect( '01-ajax.html' );
+    res.redirect( '04-multi-jquery.html' );
   });
   app.use( Exp.static( __dirname ));
 
