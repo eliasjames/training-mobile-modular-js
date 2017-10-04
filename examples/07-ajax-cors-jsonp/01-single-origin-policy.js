@@ -5,7 +5,7 @@ function makeAjaxCall() {
   var myAjax = new XMLHttpRequest();
   
   myAjax.addEventListener( 'load', reqListener );
-  myAjax.open( 'GET', 'http://localhost:3000/respond-to-ajax' );
+  myAjax.open( 'GET', 'http://localhost:9999/players/1' );
   myAjax.send();
 
 }
