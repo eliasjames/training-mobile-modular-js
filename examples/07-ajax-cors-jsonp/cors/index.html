@@ -8,15 +8,14 @@
   <meta name="description" content="Basic CSS">
   <meta name="author" content="Elias Carlston">
 
-  <link rel="stylesheet" href="styles.css?v=1.0">
-
   <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="01-single-origin-policy.js"></script>
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 
-<body>
+<body onload="onBodyLoad()">
   <h1>Hapi</h1>
   <button id="do-ajax">Do Ajax</button>
   <script>
