@@ -24,12 +24,16 @@
               event.target.setCustomValidity( '' );
             }
           });
+        document.getElementById( 'sign-up' )
+          .addEventListener( 'submit', function( e ) {
+            debugger;
+          });
       });
     </script>
   </head>
 	<body>
 		<h1>Forms</h1>
-    <form>
+    <form id="sign-up">
       <label for="inpEmail">Email address</label>
       <input 
         id="first-email" 
