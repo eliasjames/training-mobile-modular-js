@@ -14,6 +14,7 @@ app.use( bP.urlencoded() );
 
 app.get( '/player/:id', function( req, rsp ) {
   var playerId = req.params.id;
+  // submit 9 as the parameter to trigger a 500
   if ( playerId === '9' ) playerId = INTENTIONAL_ERROR.HERE;
   rsp.json({
     id: playerId,
