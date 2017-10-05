@@ -10,6 +10,6 @@ function bindEvents() {
   document.getElementById( 'sign-up' )
     .addEventListener( 'submit', function( e ) {
       e.preventDefault();
-      makeAjaxCall( 'http://localhost:9999/players/9' );
+      makeAjaxCall( 'http://localhost:9999/check-email-available' );
     });
 }

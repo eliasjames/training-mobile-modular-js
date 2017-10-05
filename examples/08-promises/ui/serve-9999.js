@@ -12,22 +12,21 @@ app.use( function( req, res, next ) {
 
 app.use( bP.urlencoded() );
 
-app.get( '/player/:id', function( req, rsp ) {
-  var playerId = req.params.id;
-  // submit 9 as the parameter to trigger a 500
-  if ( playerId === '9' ) playerId = INTENTIONAL_ERROR.HERE;
-  rsp.json({
-    id: playerId,
-    name: 'Willie Nelson'
-  });
-});
+app.get( '/check-email-available', function( req, rsp ) {
+  var desiredEmail = req.params.email;
+  var chance = Math.random();
+  var payload = {
+    success: false,
+    message: 'Email not available'
+  };   
 
-app.post( '/player/', function( req, rsp ) {
-  var playerName = req.body.playerName;
-  rsp.json({
-    id: 7,
-    name: playerName
-  });
+  if ( chance > 0.75 ) {
+    payload = {
+      success: true,
+      message: 'Email available'
+    };   
+  }
+  rsp.json( payload );
 });
 
 app.get( '*', function( req, rsp ) {
