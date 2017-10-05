@@ -1,0 +1,11 @@
+Goal: Handle server rejection
+Reason: Demonstrates async behavior
+Method: Read XHR response & prompt user
+
+- 01-make-ajax.js
+-- add success, error arguments to makeAjaxCall
+-- set default handlers for success, error if not supplied
+-- add XHR status checks to ajax event listener & call success / error
+- 01-bind-event.js
+-- add success callback to ajax call
+-- success callback should notify user & maybe disable submit

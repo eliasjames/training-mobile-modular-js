@@ -1,0 +1,15 @@
+Async UI example
+
+Goal: demonstrate handling asynchronous but related requirements
+
+Description:
+- Signup form
+- User enters desired email
+- Form does routine email validation
+- On valid input, form should submit email
+- Server responds 
+  - If email is available, success
+  - If not, user is asked to choose again
+- On / Offline
+  - If connection is interrupted, user input should be saved to local storage
+  - When connection resumes, submit user input
