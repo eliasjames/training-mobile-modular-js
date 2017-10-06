@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+    <meta name="description" content="Forms">
+    <meta name="author" content="Elias Carlston">
+    <style>
+      form * {
+        display: block;
+      }
+      input:invalid {
+        border: 2px solid red;
+      }
+    </style>
+    <script src="02-make-ajax.js"></script>
+    <script src="02-business-logic.js"></script>
+    <script src="02-bind-events.js"></script>
+    <script>
+      document.addEventListener( 'DOMContentLoaded', function() {
+        bindEvents();
+      });
+    </script>
+  </head>
+	<body>
+		<h1>Forms</h1>
+    <form id="sign-up">
+			<span class="user-message"></span>
+      <label for="first-email">Email address</label>
+      <input 
+        id="first-email" 
+        autofocus
+        type="email" 
+        required 
+        placeholder="you have an email, right?"
+      >
+      <label for="second-email">Enter email again</label>
+      <input type="email" required id="second-email">
+      <input type="submit">
+    </form>
+	</body>
+</html>
