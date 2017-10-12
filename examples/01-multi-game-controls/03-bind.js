@@ -1,7 +1,7 @@
 ticTacToe.bind = function( gameId ) {
   return {
     bindCurrentPlayer() {
-      var changePlayerTarget = `.${ GLOBAL_CONFIG.ui.els.currentPlayer }[data-game-id="${ this.gameId }`;
+      var changePlayerTarget = `.${ GLOBAL_CONFIG.ui.els.currentPlayer }[data-game-id="${ this.gameId }"]`;
       $( document ).on( GLOBAL_CONFIG.ui.events.changePlayer, ( e )=>{
         if ( e.detail.gameId === this.gameId ) {
           $( changePlayerTarget ).html( 'Current player: ' + e.detail.name );
