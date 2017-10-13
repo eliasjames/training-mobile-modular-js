@@ -1,0 +1,10 @@
+Problem
+npm global dir defaults to /usr/local
+System owns that dir, so must use sudo
+Installing packages using sudo not okay
+
+Solution
+Create new dir
+Add to .npmrc as 'prefix'
+Add to PATH in .bashrc 
+https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
