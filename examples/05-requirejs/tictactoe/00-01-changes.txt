@@ -1,0 +1,22 @@
+Goal: Implement RequireJS to handle module loading
+Reason: Improvement over homegrown module loading
+Method: Wrap constructors in define functions, add require scripts
+Note: The 00- files in this example are carried over from 01-multi-game-controls, not 02-remove-global-object. 
+This is because using RequireJS replaces the global object.
+
+package.json
+- Create file
+- Add requirejs to dependencies
+01-requirejs.html
+- Add script tag
+-- src points to "node_modules/requirejs/require.js"
+-- data-main attribute points to "01-init" (no suffix)
+01-init.js
+- Add requirejs call to load tictactoe
+-- Assign result to top-level Game constructor
+-- Add requirejs call to load bind
+--- Assign result to top-level Bind constructor
+--- Add document ready handler with call to newGame
+- Add requirejs call to load controls 
+01-bind.js
+- 
